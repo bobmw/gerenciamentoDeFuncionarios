@@ -135,7 +135,7 @@ function renderManagerTable() {
       <td>${gerente.departamento}</td>
       <td><button onclick="alert('${gerente.apresentacao}')">Apresentar</button></td>
       <td><button onclick="alert('${gerente.trabalhar}')">Trabalhar</button></td>
-      <td><button onclick="alert('${gerente.gerenciar}')">Gerencias</button></td>
+      <td><button onclick="alert('${gerente.gerenciar}')">Gerenciar</button></td>
     `;
     
     tbody.appendChild(row);
