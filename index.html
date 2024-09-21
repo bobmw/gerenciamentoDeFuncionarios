@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Funcionários</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Cadastrar Gerente</legend>
+        
+        <label for="managerName">Nome:</label>
+        <br>
+        <input type="text" id="managerName" name="managerName" required>
+        <br><br>
+        
+        <label for="managerAge">Idade:</label>
+        <br>
+        <input type="number" id="managerAge" name="managerAge" required>
+        <br><br>
+        
+        <label for="managerDP">Departamento:</label>
+        <br>
+        <input type="text" id="managerDP" name="managerDP" required>
+        <br><br>
+        <button type="button" id="registerManager">Cadastrar</button>
+    </fieldset>
+    <br><br>
+
+    <fieldset>
+        <legend>Cadastrar Desenvolvedor</legend>
+        
+        <label for="devName">Nome:</label>
+        <br>
+        <input type="text" id="devName" name="devName" required>
+        <br><br>
+        
+        <label for="devAge">Idade:</label>
+        <br>
+        <input type="number" id="devAge" name="devAge" required>
+        <br><br>
+        
+        <label for="devStack">Linguagem:</label>
+        <br>
+        <input type="text" id="devStack" name="devStack" required>
+        <br><br>
+        <button type="button" id="registerDev">Cadastrar</button>
+    </fieldset>
+    
+    <br><br>
+    <h2>Tabela de gerentes</h2>
+    <p>Clico nos botões para ver as ações dos Funcionários</p>
+    <table border="1" id="managerTable">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Departamento</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+<br><br>
+<h2>Tabela de Desenvolvedores</h2>
+<p>Clico nos botões para ver as ações dos Funcionários</p>
+<table border="1" id="developerTable">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Linguagem</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+    <script src="./script.js"></script>
+</body>
+</html>
