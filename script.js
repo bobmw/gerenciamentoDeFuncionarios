@@ -82,13 +82,12 @@ class Desenvolvedor extends Funcionario {
 managerForm.registerButton.addEventListener('click', () => {
   try {
     const { name, age, department } = managerForm.getValues();
-
-    if (!name || !age || !department) {
-      throw new Error("Todos os campos obrigatórios devem ser preenchidos.");
-    }
-
+    const shouldRenderErrorMassage = (!name || !age || !department);
+    exibirErro(shouldRenderErrorMassage);
+    
     const newManager = new Gerente(name, age, department);
     const managerList = JSON.parse(localStorage.getItem('gerentes')) || [];
+
     managerList.push({...newManager, apresentacao: newManager.seApresentar(), trabalhar: newManager.trabalhar(), gerenciar: newManager.gerenciar()});
     localStorage.setItem('gerentes', JSON.stringify(managerList));
 
@@ -103,13 +102,12 @@ managerForm.registerButton.addEventListener('click', () => {
 developerForm.registerButton.addEventListener('click', () => {
   try {
     const { name, age, stack } = developerForm.getValues();
-
-    if (!name || !age || !stack) {
-      throw new Error("Todos os campos obrigatórios devem ser preenchidos.");
-    }
-
-    const newDeveloper = new Desenvolvedor(name, age, stack);
+    const shouldRenderErrorMassage = (!name || !age || !stack);
+    
+    exibirErro(shouldRenderErrorMassage);
+    
     const developerList = JSON.parse(localStorage.getItem('desenvolvedores')) || [];
+    const newDeveloper = new Desenvolvedor(name, age, stack);
     developerList.push({...newDeveloper, trabalhar: newDeveloper.trabalhar(), programar: newDeveloper.programar(), apresentacao: newDeveloper.seApresentar()});
     localStorage.setItem('desenvolvedores', JSON.stringify(developerList));
 
@@ -119,6 +117,14 @@ developerForm.registerButton.addEventListener('click', () => {
     alert(error.message);
   }
 });
+
+// Função para exibir mensagem de erro na página
+function exibirErro(shouldRenderErrorMassage=false) {
+  if (shouldRenderErrorMassage) {
+    throw new Error("Todos os campos obrigatórios devem ser preenchidos.");
+  }
+  return;
+}
 
 // Renderiza a tabela de Gerentes
 function renderManagerTable() {
