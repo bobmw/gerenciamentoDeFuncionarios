@@ -1,5 +1,7 @@
 # Gerenciamento de Funcionários
 
+https://bobmw.github.io/gerenciamentoDeFuncionarios/
+
 Este projeto é um exercício para praticar o uso de classes e exceções em JavaScript. A aplicação permite o cadastro de gerentes e desenvolvedores, armazenando as informações em `localStorage` e exibindo-as em tabelas dinâmicas.
 
 ## Funcionalidades
